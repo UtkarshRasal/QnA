@@ -1,50 +1,7 @@
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/urls.py changed, reloading.
-WARNING:django.request:Forbidden: /questions/
-WARNING:django.request:Not Found: /login/
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QuestionAnswer/urls.py changed, reloading.
-WARNING:django.request:Bad Request: /login/
-ERROR:django.request:Internal Server Error: /register/
-Traceback (most recent call last):
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/accounts/views.py", line 41, in post
-    Util.send_email(data)
-  File "/home/utkarshrasal/QuestionAnswer/accounts/utils.py", line 7, in send_email
-    email.send()
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/mail/message.py", line 284, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/mail/backends/smtp.py", line 102, in send_messages
-    new_conn_created = self.open()
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/mail/backends/smtp.py", line 62, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/usr/lib/python3.8/smtplib.py", line 253, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/usr/lib/python3.8/smtplib.py", line 339, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/usr/lib/python3.8/smtplib.py", line 308, in _get_socket
-    return socket.create_connection((host, port), timeout,
-  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
-    raise err
-  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QuestionAnswer/settings.py changed, reloading.
-WARNING:django.request:Bad Request: /register/
-WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Category listed successfully
+INFO:root:Category created successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
 ERROR:django.request:Internal Server Error: /questions/
 Traceback (most recent call last):
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
@@ -63,14 +20,724 @@ Traceback (most recent call last):
     raise exc
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 19, in create
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 53, in list
+    return return_response(True, f"{self.instance_name} listed successfully", serializer.data, status.HTTP_200_OK)
+NameError: name 'serializer' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+ERROR:django.request:Internal Server Error: /questions/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/renderers.py", line 100, in render
+    ret = json.dumps(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/pagination.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+WARNING:django.request:Not Found: /questions/
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Question listed successfully
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/pagination.py changed, reloading.
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Method Not Allowed: /questions/9373cd7e-6ced-4f0b-9439-bce589ca0dad/
+INFO:root:Question updated successfully
+ERROR:django.request:Internal Server Error: /questions/9373cd7e-6ced-4f0b-9439-bce589ca0dad/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 86, in update
+    return return_response(True, f"{self.instance_name} updated successfully", serializers.data, status.HTTP_201_CREATED)
+NameError: name 'serializers' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question updated successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Partially updated Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+WARNING:django.request:Bad Request: /questions/9373cd7e-6ced-4f0b-9439-bce589ca0dad/
+INFO:root:Partially updated Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+INFO:root:Partially updated Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+INFO:root:Partially updated Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Deleted Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+ERROR:django.request:Internal Server Error: /questions/9373cd7e-6ced-4f0b-9439-bce589ca0dad/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 115, in destroy
+    return return_response(True, f"{self.instance_name} updated successfully", serializer.data, status.h)
+NameError: name 'serializer' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/response.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Deleted Question '9373cd7e-6ced-4f0b-9439-bce589ca0dad'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Deleted Question '09c3bc0a-8420-4892-8ace-d5053b8bd6b0'
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Method Not Allowed: /questions/09c3bc0a-8420-4892-8ace-d5053b8bd6b0/
+INFO:root:Question created successfully
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Partially updated Category 'db067a5f-513e-4166-803e-c7ed617fbce5'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Deleted Category 'db067a5f-513e-4166-803e-c7ed617fbce5'
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+ERROR:django.request:Internal Server Error: /category/db067a5f-513e-4166-803e-c7ed617fbce5/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'CategoryTypeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Retrieved Question '13888dd2-af72-437c-b3a8-f53a1f6b8944'
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-df53a1f6b8944/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2336, in to_python
+    return uuid.UUID(**{input_form: value})
+  File "/usr/lib/python3.8/uuid.py", line 169, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 140, in retrieve
+    instance = self.model_class.objects.get(id=pk)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 418, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/lookups.py", line 76, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2320, in get_prep_value
+    return self.to_python(value)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2338, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“13888dd2-af72-437c-b3a8-df53a1f6b8944” is not a valid UUID.']
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-753a1f6b8944/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 140, in retrieve
+    instance = self.model_class.objects.get(id=pk)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+QnA.models.Question.DoesNotExist: Question matching query does not exist.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-753a1f6b8944/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-753a1f6b8944/
+ERROR:django.request:Internal Server Error: /questions/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 91, in create
+    if request.data.get['question_type'] != 'Subjective' or request.data.get['question_type'] != 'Objective':
+TypeError: 'builtin_function_or_method' object is not subscriptable
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/
+WARNING:django.request:Bad Request: /questions/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question created successfully
+WARNING:django.request:Bad Request: /questions/
+WARNING:django.request:Bad Request: /questions/
+INFO:root:Question created successfully
+ERROR:django.request:Internal Server Error: /questions/3ea18eb3-5c39-4305-9b37-b828b38cae38
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PATCH data. Change your form to point to localhost:8000/questions/3ea18eb3-5c39-4305-9b37-b828b38cae38/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING:django.request:Bad Request: /questions/3ea18eb3-5c39-4305-9b37-b828b38cae38/
+WARNING:django.request:Bad Request: /questions/3ea18eb3-5c39-4305-9b37-b828b38cae38/
+INFO:root:Partially updated Question '3ea18eb3-5c39-4305-9b37-b828b38cae38'
+WARNING:django.request:Method Not Allowed: /questions/
+INFO:root:Question created successfully
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Question listed successfully
+INFO:root:Question listed successfully
+INFO:root:Question listed successfully
+INFO:root:Question listed successfully
+ERROR:django.request:Internal Server Error: /questions/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/renderers.py", line 702, in get_context
+    'filter_form': self.get_filter_form(data, view, request),
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/renderers.py", line 630, in get_filter_form
+    queryset = view.get_queryset()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'QuestionView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+INFO:root:Question listed successfully
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Question listed successfully
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
+ERROR:django.request:Internal Server Error: /admin/QnA/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: QnA_answer.answer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: QnA_answer.answer
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
+ERROR:django.request:Internal Server Error: /admin/QnA/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: QnA_answer.answer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: QnA_answer.answer
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 21, in choices
+    return return_response(False, f"{self.instance_name} creation failed", serializer.errors, status.HTTP_400_BAD_REQUEST)
+NameError: name 'status' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 15, in choices
+    'question':question.id}})
+AttributeError: 'QuerySet' object has no attribute 'id'
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Not Found: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/chices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 18, in choices
+    logging.info(f"Choices for {self.instance_name} {kwargs.get('pk')} created successfully")
+NameError: name 'logging' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/choices/
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/a0d82c69-c95a-419a-ac0e-64fc8f9d883c/choices/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 29, in answer
+    if not self.model_class.objects.filter(id=pk).exists():
+NameError: name 'pk' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 40, in answer
+    answer = Answer.objects.get(answer=question)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 433, in get
+    raise self.model.MultipleObjectsReturned(
+QnA.models.Answer.MultipleObjectsReturned: get() returned more than one Answer -- it returned 2!
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 40, in answer
+    answer = Answer.objects.get(answer=question)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 433, in get
+    raise self.model.MultipleObjectsReturned(
+QnA.models.Answer.MultipleObjectsReturned: get() returned more than one Answer -- it returned 2!
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: QnA_answer.is_correct
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 36, in answer
     serializer.save()
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 173, in save
-    assert hasattr(self, '_errors'), (
-AssertionError: You must call `.is_valid()` before calling `.save()`.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: QnA_answer.is_correct
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: QnA_answer.is_correct
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
@@ -88,28 +755,149 @@ Traceback (most recent call last):
     raise exc
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 17, in create
-    serializer = self.get_serializer(data=data, user=request.user.pk)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/generics.py", line 110, in get_serializer
-    return serializer_class(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 115, in __init__
-    super().__init__(**kwargs)
-TypeError: __init__() got an unexpected keyword argument 'user'
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 36, in answer
+    serializer.save()
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: QnA_answer.is_correct
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
-WARNING:django.request:Unsupported Media Type: /questions/
-WARNING:django.request:Bad Request: /questions/
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 38, in answer
+    question = self.model_class.objects.get(id=pk)
+NameError: name 'serializers' is not defined
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+WARNING:django.request:Unauthorized: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+WARNING:django.request:Bad Request: /login/
+WARNING:django.request:Bad Request: /login/
+WARNING:django.request:Not Found: /favicon.ico
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-WARNING:django.request:Bad Request: /questions/
+WARNING:django.request:Bad Request: /questions/13888dd2-af72-437c-b3a8-f53a1f6b8944/answer/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/a0d82c69-c95a-419a-ac0e-64fc8f9d883c/answer/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/a0d82c69-c95a-419a-ac0e-64fc8f9d883c/answer/
+ERROR:django.request:Internal Server Error: /questions/a0d82c69-c95a-419a-ac0e-64fc8f9d883c/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 39, in answer
+    question = self.model_class.objects.get(id=pk)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 39, in answer
+    question = self.model_class.objects.get(id=pk)
+  File "/usr/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+ERROR:django.request:Internal Server Error: /questions/a0d82c69-c95a-419a-ac0e-64fc8f9d883c/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 38, in answer
+    answer = serializer.save()
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 38, in answer
+    answer = serializer.save()
+  File "/usr/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
 WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
+WARNING:django.request:Unauthorized: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+WARNING:django.request:Bad Request: /login/
+ERROR:django.request:Internal Server Error: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
 Traceback (most recent call last):
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
@@ -127,119 +915,49 @@ Traceback (most recent call last):
     raise exc
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 17, in create
-    _category = request.data['category_type']
-NameError: name '_tags' is not defined
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
-Traceback (most recent call last):
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 17, in create
-    category = request.data['category_type']
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 177, in save
-    assert not self.errors, (
-AssertionError: You cannot call `.save()` on a serializer with invalid data.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
-Traceback (most recent call last):
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 36, in create
-    serializer.is_valid()
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 607, in run_validation
-    value = self.to_internal_value(data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 643, in to_internal_value
-    validated = self.child.run_validation(item)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 472, in to_internal_value
-    for field in fields:
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 355, in _writable_fields
-    for field in self.fields.values():
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 349, in fields
-    for key, value in self.get_fields().items():
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1053, in get_fields
-    field_class, field_kwargs = self.build_field(
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1199, in build_field
-    return self.build_unknown_field(field_name, model_class)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1317, in build_unknown_field
-    raise ImproperlyConfigured(
-django.core.exceptions.ImproperlyConfigured: Field name `name` is not valid for model `QnaCategory`.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
-Traceback (most recent call last):
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 36, in create
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 37, in answer
     serializer.is_valid(raise_exception=True)
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
     self._validated_data = self.run_validation(self.initial_data)
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
     value = self.to_internal_value(data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 607, in run_validation
-    value = self.to_internal_value(data)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 643, in to_internal_value
-    validated = self.child.run_validation(item)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1053, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1317, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `reciever` is not valid for model `Answer`.
+ERROR:django.request:Internal Server Error: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+Traceback (most recent call last):
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/utkarshrasal/QuestionAnswer/QnA/mixins.py", line 35, in answer
+    _data = {**answer, **{'reciever':request.user.pk, 'question':pk}}
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
     value = self.to_internal_value(data)
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 472, in to_internal_value
@@ -256,13 +974,29 @@ Traceback (most recent call last):
     return self.build_unknown_field(field_name, model_class)
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1317, in build_unknown_field
     raise ImproperlyConfigured(
-django.core.exceptions.ImproperlyConfigured: Field name `name` is not valid for model `QnaCategory`.
+django.core.exceptions.ImproperlyConfigured: Field name `reciever` is not valid for model `Answer`.
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/mixins.py changed, reloading.
+WARNING:django.request:Bad Request: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+WARNING:django.request:Unauthorized: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+WARNING:django.request:Bad Request: /questions/f59de992-0f59-4ae4-8244-28412cee90d0/answer/
+INFO:root:Question listed successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+INFO:root:Question listed successfully
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
 WARNING:django.request:Not Found: /favicon.ico
-INFO:root:Question created successfully
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/urls.py changed, reloading.
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
 ERROR:django.request:Internal Server Error: /questions/
@@ -283,81 +1017,34 @@ Traceback (most recent call last):
     raise exc
   File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 19, in create
-    if type(category) is str:
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
-    self.instance = self.create(validated_data)
-  File "/home/utkarshrasal/QuestionAnswer/QnA/serializers.py", line 25, in create
-    _question = Blogs.objects.create(**validated_data)
-NameError: name 'Blogs' is not defined
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-ERROR:django.request:Internal Server Error: /questions/
-Traceback (most recent call last):
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 17, in create
-    category = request.data['category_type']
-  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
-    self.instance = self.create(validated_data)
-  File "/home/utkarshrasal/QuestionAnswer/QnA/serializers.py", line 29, in create
-    return _blog
-NameError: name '_blog' is not defined
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
-INFO:root:Question created successfully
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
+  File "/home/utkarshrasal/QuestionAnswer/base/viewsets.py", line 80, in list
+    serializer = self.get_paginated_response(self.get_serializer(page, many=True).data)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    for field in fields:
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/home/utkarshrasal/.local/lib/python3.8/site-packages/rest_framework/serializers.py", line 1101, in get_field_names
+    assert not (fields is None and exclude is None), (
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the QuestionShowSerializer serializer.",)
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:root:Question listed successfully
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
+INFO:root:Question listed successfully
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
+INFO:root:Question listed successfully
 INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:root:Question created successfully
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/models.py changed, reloading.
-WARNING:django.request:Not Found: /favicon.ico
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:root:Question created successfully
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/views.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/QnA/serializers.py changed, reloading.
-INFO:root:Question created successfully
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-WARNING:django.request:Not Found: /favicon.ico
-WARNING:django.request:Not Found: /favicon.ico
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-WARNING:django.request:Not Found: /favicon.ico
-INFO:root:Question created successfully
-INFO:root:Question created successfully
-INFO:django.utils.autoreload:/home/utkarshrasal/QuestionAnswer/base/viewsets.py changed, reloading.
-INFO:root:Question created successfully

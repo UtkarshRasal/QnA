@@ -3,10 +3,11 @@ from base.models import BaseModel
 from accounts.models import User
 
 class QnaCategory(BaseModel):
-    category_name = models.CharField(max_length=255, null=True, blank=True)
+    category_name = models.CharField(max_length=255, blank=False)
 
     class Meta:
         verbose_name_plural = 'QnA_category'
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.category_name
@@ -14,7 +15,8 @@ class QnaCategory(BaseModel):
 class Question(BaseModel):
 
     ques_sender = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.CharField(max_length=100, null=True, blank=True)
+    question = models.CharField(max_length=255, null=True, blank=True)
+    correct_answer = models.CharField(max_length=100, null=True, blank=True)
 
     category_type = models.ManyToManyField(QnaCategory)
     question_type = models.CharField(max_length=100, choices=[('Objective', 'Objective'),('Subjective', 'Subjective')], null=True, blank=True)
@@ -37,6 +39,7 @@ class Choices(BaseModel):
 
     class Meta:
         verbose_name_plural = 'choice'
+        ordering = ['-created_at']
         
     def __str__(self):
         return str(self.question.question)
@@ -44,16 +47,17 @@ class Choices(BaseModel):
 class Answer(BaseModel):
     
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="answer_set_question")
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    receiver = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    correct_answer = models.CharField(max_length=100, null=True, blank=True)
+    answer = models.CharField(max_length=100, null=True, blank=True)
     is_correct = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = 'answer'
+        ordering = ['-created_at']
     
     def __str__(self):
-        return self.correct_answer
+        return self.answer
 
 class SelectedQnA(BaseModel):
     ques_sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ques_sender')
@@ -63,8 +67,6 @@ class SelectedQnA(BaseModel):
 
     class Meta:
         verbose_name_plural = 'SelectedQnA'
+        ordering = ['-created_at']
     
-    def __str__(self):
-        name = f"{self.ques_sender.first_name} {self.ques_sender.last_name}"
-        return name
     
